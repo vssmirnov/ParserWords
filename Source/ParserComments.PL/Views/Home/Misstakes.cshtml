@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Исправить первые 10 ошибок";
+}
+@model List<ParserComments.PL.Models.MisstakeModel>
+
+<h2>@ViewBag.Title.</h2>
+
+<form name="contactform" class="form-inline" role="form" method="post" action="/Home/SaveMisstake">
+   @foreach (var misstake in Model)
+   {
+      <div class="form-group mb-2">
+         <input readonly type="text" class="form-control" value="@misstake.Misstake">
+      </div>
+      <div class="form-group mb-2">
+         <input name="@misstake.Id.ToString()" type="text" class="form-control" placeholder="Исправление">
+      </div>
+      <p />
+   }
+   <p />
+   <button id="myBtn" type="submit" value="send" class="btn btn-primary">Запомнить</button>
+
+</form>

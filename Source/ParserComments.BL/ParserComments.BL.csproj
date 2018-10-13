@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCFE54CE-99D2-4820-81C8-CBA22D4EB48D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ParserComments.BL</RootNamespace>
+    <AssemblyName>ParserComments.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalculatorRank.cs" />
+    <Compile Include="IManagerMisstake.cs" />
+    <Compile Include="ManagerMisstake.cs" />
+    <Compile Include="Models\FindedItem.cs" />
+    <Compile Include="ICalculatorRank.cs" />
+    <Compile Include="IManagerMessages.cs" />
+    <Compile Include="IManagerRanks.cs" />
+    <Compile Include="Models\IMessageModel.cs" />
+    <Compile Include="Models\IMisstakeModel.cs" />
+    <Compile Include="Models\IPhaseRankModel.cs" />
+    <Compile Include="ISearcher.cs" />
+    <Compile Include="ISeparatingUserMessage.cs" />
+    <Compile Include="Models\IWordRankModel.cs" />
+    <Compile Include="ManagerMessages.cs" />
+    <Compile Include="ManagerRanks.cs" />
+    <Compile Include="Models\PhaseRank.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories.cs" />
+    <Compile Include="Searcher.cs" />
+    <Compile Include="SeparatingUserMessage.cs" />
+    <Compile Include="Models\SourceType.cs" />
+    <Compile Include="Models\WordRank.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParserComments.DAL\ParserComments.DAL.csproj">
+      <Project>{AF7C6CDA-0000-4D67-83B5-9B6F1B13CB45}</Project>
+      <Name>ParserComments.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

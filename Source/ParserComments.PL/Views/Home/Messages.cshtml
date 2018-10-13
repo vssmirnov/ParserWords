@@ -1,0 +1,41 @@
+﻿@model List<ParserComments.PL.Models.MessageModel>
+
+<div class="jumbotron">
+   <div class="panel-body">
+
+      <form name="contactform" class="form-inline" role="form" method="post" action="/Home/Contact">
+
+         <div class="form-group">
+            <label class="text-info">Имя</label>
+            <input name="userName" type="text" class="form-control" placeholder="Имя">
+         </div>
+         <p></p>
+         <div class="form-group">
+            <label class="text-info">Email</label>
+            <input name="email" type="email" class="form-control" placeholder="Email">
+         </div>
+         <p></p>
+         <div class="form-group">
+            <label class="text-info">Комментарий</label><br />
+            <textarea name="message" class="form-control" cols="20" rows="2" style="width: 400px; height: 150px; max-height: 350px; max-width: 500px"></textarea>
+         </div>
+         <p></p>
+
+         <button id="myBtn" type="submit" value="send" class="btn btn-primary">Отправить</button><p />
+      </form>
+   </div>
+</div>
+
+<div class="list-group">
+   @foreach (var message in Model)
+   {
+      <div class="list-group-item flex-column align-items-start active">
+         <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">@message.UserName</h5>
+            <small>@message.SentDate</small>
+         </div>
+         <p class="mb-1">@message.Message</p>
+      </div>
+      <p></p>
+   }   
+</div>

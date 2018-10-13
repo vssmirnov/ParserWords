@@ -1,0 +1,54 @@
+﻿@{
+   ViewBag.Title = "Ранги слов";
+}
+@model ParserComments.PL.Models.RankViewModel
+<h2>@ViewBag.Title.</h2>
+
+<div class="card">
+   <div class="card-header">
+      Рейтинг 5 наиболее часто встречающихся слов уникальных для сообщения
+   </div>
+   <ul class="list-group list-group-flush">
+      @foreach (var word in Model.WordRankUniqueMessageModels)
+      {
+         <li class="list-group-item">@word.Word</li>
+      }
+   </ul>
+</div>
+<p></p>
+<div class="card">
+   <div class="card-header">
+      Рейтинг 5 наиболее часто встречающихся фраз уникальных для сообщения
+   </div>
+   <ul class="list-group list-group-flush">
+      @foreach (var word in Model.PhaseRankUniqueMessageModels)
+      {
+         <li class="list-group-item">@word.Phase</li>
+      }
+   </ul>
+</div>
+<p></p>
+<div class="card">
+   <div class="card-header">
+      Рейтинг 5 наиболее часто встречающихся слов
+   </div>
+   <ul class="list-group list-group-flush">
+      @foreach (var word in Model.WordRankTotalModels)
+      {
+         <li class="list-group-item">@word.Word</li>
+      }
+   </ul>
+</div>
+<p></p>
+<div class="card">
+   <div class="card-header">
+      Рейтинг 5 наиболее часто встречающихся фраз
+   </div>
+   <ul class="list-group list-group-flush">
+      @foreach (var word in Model.PhaseRankTotalModels)
+      {
+         <li class="list-group-item">@word.Phase</li>
+      }
+   </ul>
+</div>
+<p></p>
